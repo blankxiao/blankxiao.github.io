@@ -1,7 +1,7 @@
 {
   "site": {
     "url": "https://blankxiao.github.io",
-    "title": "Gyoza",
+    "title": "Blank's blog",
     "description": "这是一个使用 Astro 和 React 开发的博客主题。",
     "keywords": "blog,Astro,个人博客",
     "lang": "zh-CN",
@@ -15,7 +15,7 @@
   },
   "hero": {
     "name": "Blank",
-    "bio": "A student from SZU, plan to be an full stack engineer, currently familiar with vue front end, flask and springboot",
+    "bio": "A student from SZU, plan to be a full stack engineer, currently familiar with vue front end, flask and springboot",
     "description": "Usually enjoy reading idle books, and busy every day but don't know what I am doing.",
     "socials": [
       {
