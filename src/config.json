@@ -21,13 +21,19 @@
       {
         "name": "Github",
         "icon": "icon-github",
-        "url": "https://github.com/lxchapu/astro-gyoza",
+        "url": "https://github.com/blankxiao",
         "color": "rgb(24, 23, 23)"
       },
       {
         "name": "Email",
         "icon": "icon-mail",
         "url": "blank_31415926@outlook.com",
+        "color": "rgb(212, 70, 56)"
+      },
+      {
+        "name": "bilibili",
+        "icon": "icon-bilibili",
+        "url": "https://space.bilibili.com/354183649",
         "color": "rgb(212, 70, 56)"
       }
     ],
