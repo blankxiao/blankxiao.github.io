@@ -2,11 +2,11 @@
 title: java网络编程-流
 date: 2024-05-24
 summary: java网络编程中输入输出流、reader和writer
-tags: 网络编程 java 计算机网络 课程
+tags: [网络编程, java, 计算机网络, 课程]
 category: java
 comments: true
 draft: false
-lastMod:
+lastMod: 2024-05-24
 sticky: 0
 ---
 
