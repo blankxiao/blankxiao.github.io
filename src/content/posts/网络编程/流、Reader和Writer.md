@@ -1,9 +1,9 @@
 ---
 title: java网络编程-流
 date: 2024-05-24
-summary: java网络编程中输入输出流、reader和writer
-tags: [网络编程, java, 计算机网络, 课程]
-category: java
+summary: java网络编程中的输入输出流、reader和writer
+tags: [网络编程, java, 计算机网络]
+category: 网络编程
 comments: true
 draft: false
 lastMod: 2024-05-24
@@ -12,7 +12,7 @@ sticky: 0
 
 ## 总结
 
-**流**就是数据比特，其中带有`File`的就是文件相关的流，带有`buffered`就是有缓冲作用的流，通过缓存数据让数据一次性处理，可以**减少io操作**进而增加传输速度。但同时在发送时需要注意`flush()`，也就是让没有达到发送门槛的数据发送，否则如果后面没有数据会导致**数据无法发送** **Data**相关是封装了byte的流，也就是可以接受和返回int等类型的流，无需再转成byte或者从byte换成各种类型（这样确实方便
+**流**就是数据比特，其中类名带有`File`的就是文件相关的流，带有`buffered`就是有缓冲作用的流，通过缓存数据让数据一次性处理，可以**减少io操作**进而增加传输速度。但同时在发送时需要注意`flush()`，也就是让没有达到发送门槛的数据发送，否则如果后面没有数据会导致**数据无法发送** **Data**相关是封装了byte的流，也就是可以接受和返回int等类型的流，无需再转成byte或者从byte换成各种类型（这样确实方便
 **Reader**和**Writer**是在原来的基础上更加注重`文本编码`，同时处理的是字符而不是byte。其子类`InputStreamReader`和`InputStreamReader`将以**流**和**编码类型**为参数实例化
 最后所有创建的类都要注意`close()`来关闭资源
 
@@ -20,24 +20,30 @@ sticky: 0
 
 ```mermaid
 graph LR
-    InputStream --> FileInputStream
-    InputStream --> FilterInputStream
-    FilterInputStream --> BufferedInputStream
-    FilterInputStream --> DataInputStream
+    classDef base fill:#f9f,stroke:#333,stroke-width:2px
+    classDef filter fill:#ccf,stroke:#333,stroke-width:2px
+    classDef buffered fill:#9cf,stroke:#333,stroke-width:2px
+    classDef data fill:#6cf,stroke:#333,stroke-width:2px
+    classDef readerWriter fill:#fcc,stroke:#333,stroke-width:2px
 
-    OutputStream --> FileOutputStream
-    OutputStream --> FilterOutputStream
-    FilterOutputStream --> BufferedOutputStream
-    FilterOutputStream --> DataOutputStream
+    InputStream[InputStream]:::base --> FileInputStream[FileInputStream]:::base
+    InputStream[InputStream]:::base --> FilterInputStream[FilterInputStream]:::filter
+    FilterInputStream[FilterInputStream]:::filter --> BufferedInputStream[BufferedInputStream]:::buffered
+    FilterInputStream[FilterInputStream]:::filter --> DataInputStream[DataInputStream]:::data
 
-    Reader --> FileReader
-    Reader --> InputStreamReader
-    InputStreamReader --> BufferedReader
+    OutputStream[OutputStream]:::base --> FileOutputStream[FileOutputStream]:::base
+    OutputStream[OutputStream]:::base --> FilterOutputStream[FilterOutputStream]:::filter
+    FilterOutputStream[FilterOutputStream]:::filter --> BufferedOutputStream[BufferedOutputStream]:::buffered
+    FilterOutputStream[FilterOutputStream]:::filter --> DataOutputStream[DataOutputStream]:::data
 
-    Writer --> FileWriter
-    Writer --> OutputStreamWriter
-    OutputStreamWriter --> BufferedWriter
-    Writer --> PrintWriter
+    Reader[Reader]:::readerWriter --> FileReader[FileReader]:::readerWriter
+    Reader[Reader]:::readerWriter --> InputStreamReader[InputStreamReader]:::readerWriter
+    InputStreamReader[InputStreamReader]:::readerWriter --> BufferedReader[BufferedReader]:::buffered
+
+    Writer[Writer]:::readerWriter --> FileWriter[FileWriter]:::readerWriter
+    Writer[Writer]:::readerWriter --> OutputStreamWriter[OutputStreamWriter]:::readerWriter
+    OutputStreamWriter[OutputStreamWriter]:::readerWriter --> BufferedWriter[BufferedWriter]:::buffered
+    Writer[Writer]:::readerWriter --> PrintWriter[PrintWriter]:::readerWriter
 ```
 
 ## 基类输入输出流
