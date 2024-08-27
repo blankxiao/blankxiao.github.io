@@ -14,9 +14,9 @@
     "avatar": "/avatar.png"
   },
   "hero": {
-    "name": "Blank",
-    "bio": "A student from SZU, plan to be a full stack engineer, currently familiar with vue front end, flask and springboot",
-    "description": "Usually enjoy reading idle books, and busy every day but don't know what I am doing.",
+    "name": "Gyoza",
+    "bio": "A static blog template build with Astro and React.",
+    "description": "Clean, Cute, Fast.",
     "socials": [
       {
         "name": "Github",
@@ -97,11 +97,6 @@
   "footer": {
     "startTime": "2024-05-21T00:00:00Z"
   },
-  "docSearch": {
-    "appId": "",
-    "apiKey": "",
-    "indexName": ""
-  },
   "waline": {
     "serverURL": ""
   },
@@ -109,13 +104,16 @@
     "wechat": "https://object.lxchapu.com/bed%2F2024%2F0507_6e3e8f73df2d4e6d.webp"
   },
   "analytics": {
-    "enbale": false,
+    "enable": false,
     "google": {
       "measurementId": ""
     },
     "umami": {
       "serverUrl": "",
-      "websitId": ""
+      "websiteId": ""
+    },
+    "microsoftClarity": {
+      "projectId": ""
     }
   }
 }

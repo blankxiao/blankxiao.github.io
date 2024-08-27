@@ -1,7 +1,7 @@
 ---
 title: 自述
-description: 鱼王还想~继续做鱼王
-time: 2024-05-21
+description: 这是一份站长的自述报告，请查收。
+comments: false
 ---
 
 ## 关于 我
