@@ -32,7 +32,7 @@ pnpm swagger-typescript-api -p ../api-docs.json -o ./src --axios --modular --mod
 - `--single-http-client` 意为只有一个http客户端
 
 执行成功后 就会有如下的文件
-![alt text](./apis结构.png)
+![alt text](./imgs/apis结构.png)
 其中 `http-client.ts`是一个封装的请求类
 `data-contracts.ts` 是所有类型的文件 比如DTO VO啥的
 其他生成的文件都是后端的接口文件 根据路由分隔的
