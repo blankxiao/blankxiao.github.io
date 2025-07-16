@@ -1,5 +1,5 @@
 ---
-title: 【机器学习】-PCA
+title: 【机器学习】- PCA
 date: 2024-06-13
 summary: 介绍了PCA的推导和直观上的理解
 tags: [PCA]

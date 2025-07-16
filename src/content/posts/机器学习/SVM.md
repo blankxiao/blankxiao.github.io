@@ -1,5 +1,5 @@
 ---
-title: 【机器学习】-SVM
+title: 【机器学习】- SVM
 date: 2024-06-13
 summary: SVM的简单推导
 tags: [SVM]
