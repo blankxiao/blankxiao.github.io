@@ -11,9 +11,7 @@ sticky: 0
 
 ## 简述
 
-支持向量机（SVM）是一个二分类模型
-找到一个超平面使得数据到这个超平面的距离最大化
-实现样本分类和预测
+支持向量机（SVM）是一个二分类模型 找到一个超平面使得数据到这个超平面的距离最大化 实现样本分类和预测
 
 ## 原理推导
 
@@ -25,20 +23,21 @@ $$
 W^Tx+b=0
 $$
 
-其中$W=(w_{1}, w_{2}, ... , w_n)$为超平面法向量，$b$ 为位移项
-任意点$(X_{i}, y_i)$到平面的距离都为
+其中$W=(w_{1}, w_{2}, ... , w_n)$为超平面法向量，$b$ 为位移项  
+任意点$(X_{i}, y_i)$到平面的距离都为  
 $$r=\frac{|W^{T}x+b|}{||w||}$$
-任意点的距离，无论是在超平面上方($y_{i}=1$) 还是在超平面的下方($y_i=-1$)，都有$|W^{T}x + b|=y_{i}(W^{T}x+b)$ [^$y_{i}的正负$]
-则原式为
+任意点的距离，无论是在超平面上方($y_{i}=1$) 还是在超平面的下方($y_i=-1$)，都有$|W^{T}x + b|=y_{i}(W^{T}x+b)$ [^$y_{i}的正负$]  
+则原式为  
 $$r=\frac{y_{i}(W^{T}x+b)}{||w||}$$
-同时我们可以根据缩放和平行
+
+同时我们可以根据缩放和平行  
 将经过支持向量且与超平面平行的面的方程设为[^平移转换]
 
 $$
 W^{T}x+b=1
 $$
 
-即经过缩放 `支持向量`到超平面的距离为1 则有$$r \geq \frac{1}{||w||}$$
+即经过缩放 `支持向量`到超平面的距离为1 则有$$r \geq \frac{1}{||w||}$$  
 此时 我们知道正负的距离相等时才是我们希望的情景，因此有
 
 $$
@@ -73,7 +72,7 @@ $$
 \sum\limits_{i=1}^{m}\alpha_{i}y_{i}=0
 $$
 
-代入后求出结果
+代入后求出结果  
 $$max_{\alpha} \sum\limits_{i=1}^{m}\alpha_{i}-\frac{1}{2}\sum\limits_{i=1}^{m}\sum\limits_{j=1}^{m}\alpha_{i}\alpha_{j}y_{i}y_{j}x_{i}^{T}x_{j}$$
 $$s.t. \sum\limits_{i=1}^{m}\alpha_{i}y_{i}=0,\alpha_{i}>=0, i=1,...,m$$
 解除$\alpha$ 即可得到模型
@@ -94,10 +93,9 @@ l_{0or1}(z)=
 \end{cases}
 $$
 
-当C是正无穷时，就是经典的svm，
-但这个$l$的数学性质不太好 不可导且不连续
-使用$hinge$函数代替
-原式变为
+当C是正无穷时，就是经典的svm，但这个$l$的数学性质不太好 不可导且不连续  
+使用$hinge$函数代替  
+原式变为  
 $$min_{m,b} \frac{1}{2}\|w\|^{2}+C\sum\limits_{i=1}^{m}max(0,1-y_{i}(w^{T}x_{i}+b))$$
 令$\xi_{i}$ 为$max(0,1-y_{i}(w^{T}x_{i}+b))$
 则原式的拉格朗日方程
@@ -125,7 +123,8 @@ $$s.t. \sum\limits_{i=1}^{m}\alpha_{i}y_{i}=0,C>=\alpha_{i}>=0, i=1,...,m$$
 2. 对于所有的非支持向量（位于间隔边界以内的训练样本）：
    - $y_i(\mathbf{w}^T\mathbf{x}_i + b) - 1 + \xi_i \geq 0$，$\xi_i$是松弛变量（Slack Variable）。这个不等式表示非支持向量满足间隔边界以内的约束条件。
 3. 松弛变量和拉格朗日乘子的关系：- $\alpha_i \geq 0$，$\mu_i \geq 0$，$\alpha_i \left(y_i(\mathbf{w}^T\mathbf{x}_i + b) - 1 + \xi_i\right) = 0$，$\mu_i\xi_i = 0$，其中$\alpha_i$是拉格朗日乘子（Lagrange Multiplier），$\mu_i$是松弛变量的拉格朗日乘子（Lagrange Multiplier）。这个关系表示拉格朗日乘子和松弛变量之间的约束条件。
-   简单来说，KKT条件要求在最优解下，支持向量满足间隔边界上的约束条件，非支持向量满足间隔边界以内的约束条件，并且拉格朗日乘子和松弛变量之间存在一定的关系。
+
+简单来说，KKT条件要求在最优解下，支持向量满足间隔边界上的约束条件，非支持向量满足间隔边界以内的约束条件，并且拉格朗日乘子和松弛变量之间存在一定的关系。
 
 - 核函数
   用于将输入数据从原始特征空间映射到一个高维特征空间，从而使得在原始特征空间中线性不可分的问题在高维特征空间中变得线性可分。
@@ -137,8 +136,8 @@ $$
 \end{cases} ]
 $$
 
-[参考yemaolin](https://blog.csdn.net/weixin_62264287/article/details/131396018)
-[svm视频](https://www.bilibili.com/video/BV1TP411U7dH/?buvid=XUF6838F8030AF7156170BBAE7784800D3C57&from_spmid=main.space-search.0.0&is_story_h5=false&mid=61ATv0c9yEdEf0WsBC2iYg%3D%3D&p=1&plat_id=114&share_from=ugc&share_medium=android_i&share_plat=android&share_session_id=475aa3a7-cf38-4bd6-9a20-fd8263060ddc&share_source=WEIXIN&share_tag=s_i&spmid=main.ugc-video-detail.0.0&timestamp=1711347466&unique_k=f4XLe9T&up_id=25987172&vd_source=dff18ebeabe62977b91c601c3cfdeea9)
+[参考yemaolin](https://blog.csdn.net/weixin_62264287/article/details/131396018)  
+[svm视频](https://www.bilibili.com/video/BV1TP411U7dH)
 
 [^$y_{i}的正负$]:
     当$W^{T}x+b>0$时，$y_{i}>0$，$W^{T}x+b<0$时，$y_{i}<0$  
