@@ -1,5 +1,5 @@
 ---
-title: 机器学习-LPP
+title: 【机器学习】- LPP
 date: 2024-05-17
 summary: 介绍了LPP的推导
 tags: [LPP, 降维算法]
