@@ -3,7 +3,7 @@ title: 【工具】- swagger-typescript-api
 date: 2024-10-26
 summary: 简化前后端接口交互的工具 自动生成类型和接口
 tags: [前端, 工具]
-category: 前端
+category: 工具
 comments: true
 draft: false
 lastMod: 2024-10-26
